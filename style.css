@@ -1,541 +1,518 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    font-family: Arial, sans-serif;
-    background-color: #fff8f0;
-    color: #333;
-    padding-top: 80px;
-}
-header{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:20px 60px;
-
-    background:rgba(255,255,255,.95);
-
-    backdrop-filter:blur(10px);
-
-    transition:.4s;
-
-}
-.logo{
-    font-size: 30px;
-    font-weight: bold;
-    color: #d62828;
-}
-nav ul{
-    display: flex;
-    list-style: none;
-}
-nav ul li{
-    margin-left: 30px;
-}
-nav ul li a{
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    font-weight: 500;
-}
-nav ul li a:hover{
-    color: #d62828;
-}
-.hero{
-    height:100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-                      url("./images/hero.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    position:relative;
-}
-.hero::before{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.5);
-}
-.hero-content{
-    position:relative;
-    z-index:1;
-    text-align:center;
-}
-.hero-content h1{
-    
-    font-size:70px;
-    color:white;
-    font-weight:700;
-    margin-bottom:20px;
-    text-shadow:2px 2px 10px rgba(0,0,0,0.4);
-}
-.hero-content p{
-    font-size:24px;
-    color:#f1f1f1;
-    margin-bottom:35px;
-    line-height:1.6;
-}
-.btn{
-     display:inline-block;
-    padding:15px 35px;
-    background:#e63946;
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    font-size:18px;
-    font-weight:600;
-    margin:10px;
-    transition:0.3s ease;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-.btn:hover{
-    background:#ff9f1c;
-    transform:translateY(-3px);
-}
-.about{
-    padding: 80px 10%;
-}
-.about-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
-}
-.about-image{
-    flex: 1;
-}
-.about-image img{
-    width:100%;
-    border-radius:10px;
-}
-.about-content{
-    flex:1;
-}
-.about-content h2{
-    font-size:40px;
-    color:#d62828;
-    margin-bottom:20px;
-}
-.about-content p{
-    font-size:18px;
-    line-height:1.8;
-    margin-bottom:20px;
-    color:#555;
-}
-.services{
-    padding: 80px 10%;
-    background-color: #ffffff;
-}
-.services h2{
-    text-align: center;
-    font-size: 40px;
-    color: #d62828;
-    margin-bottom: 50px;
-}
-.service-container{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 30px;
-}
-.service-card{
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-.service-card:hover{
-    transform: translateY(-10px);
-}
-.service-card img{
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-.service-card h3{
-    font-size: 24px;
-    color: #d62828;
-    margin: 20px;
-}
-.service-card p{
-    margin: 0 20px 20px;
-    line-height: 1.6;
-    color: #555;
-}
-.service-card .btn{
-    display: inline-block;
-    margin: 0 20px 20px;
-}
-.menu{
-    padding: 80px 10%;
-    background-color: #fff8f0;
-}
-.menu h2{
-    text-align: center;
-    font-size: 40px;
-    color: #d62828;
-    margin-bottom: 15px;
-}
-.menu-text{
-    text-align: center;
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 50px;
-}
-.menu-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-.menu-card{
-    background-color: #ffffff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-.menu-card:hover{
-    transform: translateY(-10px);
-}
-.menu-card img{
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-.menu-card h3{
-    font-size: 24px;
-    color: #d62828;
-    margin: 20px;
-}
-.menu-card p{
-    margin: 0 20px 20px;
-    color: #555;
-    line-height: 1.6;
-}
-.menu-card h4{
-    margin: 0 20px 20px;
-    color: #2a9d8f;
-    font-size: 22px;
-    font-weight: bold;
-}
-html{
-    scroll-behavior: smooth;
-}
-.sticky{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background: white;
-    padding: 20px 60px;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,.2);
-
-    z-index: 1000;
-
-    animation: slideDown .5s;
-}
-@keyframes slideDown{
-
-    from{
-
-        transform: translateY(-100%);
-
-    }
-
-    to{
-
-        transform: translateY(0);
-
-    }
-
-}
-.gallery{
-    padding:80px 10%;
-    background:#fdf8f3;
-}
-
-.gallery h2{
-    text-align:center;
-    font-size:40px;
-    color:#c0392b;
-    margin-bottom:15px;
-}
-
-.gallery-text{
-    text-align:center;
-    color:#555;
-    font-size:18px;
-    margin-bottom:40px;
-}
-.gallery-filter{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-
-    margin-bottom:40px;
-
-}
-.gallery-filter button{
-
-    padding:12px 25px;
-
-    border:none;
-
-    border-radius:30px;
-
-    background:white;
-
-    color:#c0392b;
-
-    cursor:pointer;
-
-    font-size:16px;
-
-    transition:.4s;
-
-    box-shadow:0 4px 10px rgba(0,0,0,.1);
-
-}
-.gallery-filter button:hover{
-
-    background:#c0392b;
-
-    color:white;
-
-}
-.gallery-filter button.active{
-
-    background:#c0392b;
-
-    color:white;
-
-}
-.gallery-container{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:25px;
-
-}
-.gallery-item{
-
-    overflow:hidden;
-
-    border-radius:15px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-
-}
-.gallery-item img{
-
-    width:100%;
-
-    height:300px;
-
-    object-fit:cover;
-
-    transition:.5s;
-
-    cursor:pointer;
-
-}
-.gallery-item img:hover{
-
-    transform:scale(1.08);
-
-}
-@media(max-width:768px){
-
-    .gallery-container{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-.lightbox{
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:100%;
-
-    background:rgba(0,0,0,.9);
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:1000;
-
-}
-.lightbox-image{
-
-    width:80%;
-
-    max-width:900px;
-
-    border-radius:15px;
-
-}
-.close{
-
-    position:absolute;
-
-    top:30px;
-
-    right:50px;
-
-    color:white;
-
-    font-size:45px;
-
-    cursor:pointer;
-
-}
-.contact {
-    padding: 80px 10%;
-    background: #fff8f0;
-}
-.contact h2 {
-    text-align: center;
-    font-size: 40px;
-    color: #c0392b;
-    margin-bottom: 15px;
-}
-.contact-text {
-    text-align: center;
-    color: #555;
-    font-size: 18px;
-    max-width: 700px;
-    margin: 0 auto 50px;
-    line-height: 1.7;
-}
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 50px;
-    max-width: 1100px;
-    margin: auto;
-}
-.contact-info {
-    background: #c0392b;
-    color: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-.contact-info h3 {
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-.contact-info p {
-    margin: 25px 0;
-    font-size: 17px;
-    line-height: 1.6;
-}
-.contact-form {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-.contact-form h3 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 25px;
-}
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-    width: 100%;
-    padding: 14px;
-    margin-bottom: 18px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    outline: none;
-    box-sizing: border-box;
-}
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-    border-color: #c0392b;
-    box-shadow: 0 0 5px rgba(192, 57, 43, 0.2);
-}
-.contact-form button {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    background: #c0392b;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-/* =========================================
-   RESPONSIVE DESIGN
-   Mobile Phones & Small Tablets
-   ========================================= */
+/* =========================================================
+   FINAL MOBILE RESPONSIVE FIX
+   Sri Vigneshwara Caterers
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   TABLETS
+   --------------------------------------------------------- */
 
 @media (max-width: 768px) {
 
-    /* ---------- GENERAL ---------- */
+    /* ---------- GLOBAL ---------- */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 
     * {
+        max-width: 100%;
         box-sizing: border-box;
     }
 
-    html {
-        scroll-behavior: smooth;
-    }
+
+    /* ---------- HEADER ---------- */
 
     body {
+        padding-top: 0;
+    }
+
+    header,
+    header.sticky {
+        position: relative;
         width: 100%;
-        overflow-x: hidden;
+        top: auto;
+        left: auto;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        padding: 25px 5%;
+
+        gap: 20px;
+
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+
+        z-index: 1000;
+    }
+
+
+    /* ---------- LOGO ---------- */
+
+    .logo {
+        width: 100%;
+        text-align: center;
+
+        font-size: 30px;
+        line-height: 1.2;
     }
 
 
     /* ---------- NAVIGATION ---------- */
 
-    nav {
-        padding: 15px 5%;
+    nav,
+    .navbar {
+        width: 100%;
     }
 
     nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
+        width: 100%;
+
+        display: flex;
+
         justify-content: center;
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        gap: 10px 18px;
+
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        margin-left: 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        width: 100%;
+        min-height: 75vh;
+
+        padding: 60px 5%;
+
+        background-position: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 650px;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+        line-height: 1.2;
+
+        margin-bottom: 18px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+        line-height: 1.6;
+
+        margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+        display: flex;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 13px 25px;
+
+        font-size: 16px;
+
+        margin: 8px;
+    }
+
+
+    /* ---------- COMMON SECTIONS ---------- */
+
+    .about,
+    .services,
+    .menu,
+    .gallery,
+    .contact {
+        width: 100%;
+
+        padding: 60px 5%;
+    }
+
+
+    /* ---------- SECTION HEADINGS ---------- */
+
+    .services h2,
+    .menu h2,
+    .gallery h2,
+    .contact h2 {
+        font-size: 32px;
+
+        line-height: 1.3;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* =====================================================
+       ABOUT
+       ===================================================== */
+
+    .about-container {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 30px;
+    }
+
+    .about-image,
+    .about-content {
+        width: 100%;
+
+        flex: none;
+    }
+
+    .about-image img {
+        display: block;
+
+        width: 100%;
+        height: auto;
+
+        border-radius: 10px;
+    }
+
+    .about-content h2 {
+        font-size: 32px;
+
+        line-height: 1.3;
+    }
+
+    .about-content p {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       SERVICES
+       ===================================================== */
+
+    /*
+       THIS IS THE MAIN FIX.
+
+       Your HTML uses:
+       .service-container
+
+       Not:
+       .services-container
+       .card-container
+       .cards
+    */
+
+    .service-container {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        margin: 0;
+    }
+
+    .service-card {
+        width: 100%;
+        min-width: 0;
+
+        display: block;
+
+        overflow: hidden;
+
+        border-radius: 12px;
+    }
+
+    .service-card img {
+        display: block;
+
+        width: 100%;
+
+        height: 220px;
+
+        object-fit: cover;
+    }
+
+    .service-card h3 {
+        font-size: 24px;
+
+        line-height: 1.3;
+
+        margin: 20px;
+    }
+
+    .service-card p {
+        margin: 0 20px 20px;
+
+        font-size: 16px;
+
+        line-height: 1.7;
+
+        word-break: normal;
+
+        overflow-wrap: break-word;
+    }
+
+    .service-card .btn {
+        margin: 0 20px 20px;
+    }
+
+
+    /* =====================================================
+       MENU
+       ===================================================== */
+
+    .menu-container {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .menu-card {
+        width: 100%;
+        min-width: 0;
+
+        overflow: hidden;
+
+        border-radius: 12px;
+    }
+
+    .menu-card img {
+        display: block;
+
+        width: 100%;
+
+        height: 220px;
+
+        object-fit: cover;
+    }
+
+    .menu-card h3 {
+        font-size: 24px;
+
+        line-height: 1.3;
+
+        margin: 20px;
+    }
+
+    .menu-card p {
+        margin: 0 20px 20px;
+
+        font-size: 16px;
+
+        line-height: 1.7;
+
+        overflow-wrap: break-word;
+    }
+
+    .menu-card h4 {
+        margin: 0 20px 20px;
+
+        font-size: 21px;
+    }
+
+
+    /* =====================================================
+       GALLERY
+       ===================================================== */
+
+    .gallery-container {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .gallery-item {
+        width: 100%;
+
+        min-width: 0;
+
+        overflow: hidden;
+    }
+
+    .gallery-item img {
+        display: block;
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 220px;
+
+        object-fit: cover;
+    }
+
+    .gallery-filter {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        margin-bottom: 30px;
+    }
+
+    .gallery-filter button {
+        padding: 10px 18px;
+
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       LIGHTBOX
+       ===================================================== */
+
+    .lightbox {
+        padding: 20px;
+    }
+
+    .lightbox-image {
+        width: 95%;
+
+        max-width: 95%;
+
+        max-height: 80vh;
+
+        object-fit: contain;
+    }
+
+    .close {
+        top: 15px;
+
+        right: 20px;
+
+        font-size: 40px;
+    }
+
+
+    /* =====================================================
+       CONTACT
+       ===================================================== */
+
+    .contact-container {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 30px;
+
+        border-radius: 12px;
+    }
+
+    .contact-info h3,
+    .contact-form h3 {
+        font-size: 24px;
+
+        line-height: 1.3;
+    }
+
+    .contact-info p {
+        font-size: 16px;
+
+        line-height: 1.6;
+
+        overflow-wrap: break-word;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+        width: 100%;
+
+        max-width: 100%;
+
+        font-size: 16px;
+    }
+
+    .contact-form button {
+        width: 100%;
+
+        font-size: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    /* ---------- HEADER ---------- */
+
+    header,
+    header.sticky {
+        padding: 20px 4%;
+
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 28px;
+
+        line-height: 1.25;
+    }
+
+    nav ul {
+        gap: 8px 14px;
     }
 
     nav ul li a {
@@ -543,198 +520,160 @@ html{
     }
 
 
-    /* ---------- HERO SECTION ---------- */
+    /* ---------- HERO ---------- */
 
     .hero {
         min-height: 70vh;
-        padding: 60px 5%;
-        text-align: center;
+
+        padding: 50px 5%;
     }
 
-    .hero h1 {
-        font-size: 38px;
+    .hero-content h1 {
+        font-size: 32px;
+
         line-height: 1.2;
     }
 
-    .hero p {
-        font-size: 16px;
+    .hero-content p {
+        font-size: 15px;
+
         line-height: 1.6;
     }
 
-    .hero button {
-        padding: 12px 25px;
-        font-size: 16px;
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: auto;
+
+        min-width: 150px;
+
+        text-align: center;
     }
 
 
-    /* ---------- COMMON SECTIONS ---------- */
+    /* ---------- SECTIONS ---------- */
 
-    section {
-        width: 100%;
-        padding: 60px 5%;
+    .about,
+    .services,
+    .menu,
+    .gallery,
+    .contact {
+        padding: 50px 4%;
     }
 
-    section h2 {
-        font-size: 32px;
-        line-height: 1.3;
+
+    /* ---------- HEADINGS ---------- */
+
+    .services h2,
+    .menu h2,
+    .gallery h2,
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    .about-content h2 {
+        font-size: 28px;
     }
 
 
-    /* ---------- CARDS ---------- */
+    /* ---------- SERVICE CARDS ---------- */
 
-    .cards,
-    .card-container,
-    .services-container,
-    .catering-container {
+    .service-container {
         grid-template-columns: 1fr;
-        gap: 25px;
+
+        gap: 20px;
     }
 
-    .card {
-        width: 100%;
+    .service-card img {
+        height: 200px;
     }
 
-    .card img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+    .service-card h3 {
+        font-size: 22px;
+
+        margin: 18px;
+    }
+
+    .service-card p {
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        margin: 0 18px 18px;
+    }
+
+    .service-card .btn {
+        margin: 0 18px 18px;
+    }
+
+
+    /* ---------- MENU CARDS ---------- */
+
+    .menu-container {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .menu-card img {
+        height: 200px;
+    }
+
+    .menu-card h3 {
+        font-size: 22px;
+
+        margin: 18px;
+    }
+
+    .menu-card p {
+        font-size: 15px;
+
+        margin: 0 18px 18px;
+    }
+
+    .menu-card h4 {
+        font-size: 20px;
+
+        margin: 0 18px 18px;
     }
 
 
     /* ---------- GALLERY ---------- */
 
-    .gallery {
-        padding: 60px 5%;
-    }
-
-    .gallery-container,
-    .gallery-grid {
+    .gallery-container {
         grid-template-columns: 1fr;
-        gap: 20px;
+
+        gap: 18px;
     }
 
-    .gallery img {
-        width: 100%;
-        height: auto;
+    .gallery-item img {
+        height: 230px;
+
+        min-height: 0;
+    }
+
+    .gallery-filter button {
+        padding: 9px 15px;
+
+        font-size: 13px;
     }
 
 
     /* ---------- CONTACT ---------- */
 
-    .contact {
-        padding: 60px 5%;
-    }
-
-    .contact h2 {
-        font-size: 32px;
-    }
-
-    .contact-text {
-        font-size: 16px;
-        margin-bottom: 35px;
-    }
-
     .contact-container {
         grid-template-columns: 1fr;
-        gap: 30px;
-        width: 100%;
-    }
 
-    .contact-info,
-    .contact-form {
-        width: 100%;
-        padding: 30px;
-    }
-
-    .contact-info h3,
-    .contact-form h3 {
-        font-size: 25px;
-    }
-
-    .contact-info p {
-        font-size: 16px;
-        word-break: break-word;
-    }
-
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-        width: 100%;
-        font-size: 16px;
-    }
-
-    .contact-form button {
-        width: 100%;
-        font-size: 17px;
-    }
-}
-
-
-/* =========================================
-   VERY SMALL MOBILE PHONES
-   ========================================= */
-
-@media (max-width: 480px) {
-
-    /* Navigation */
-
-    nav {
-        padding: 12px 4%;
-    }
-
-    nav ul {
-        gap: 10px;
-    }
-
-    nav ul li a {
-        font-size: 13px;
-    }
-
-
-    /* Hero */
-
-    .hero {
-        min-height: 65vh;
-        padding: 45px 5%;
-    }
-
-    .hero h1 {
-        font-size: 30px;
-    }
-
-    .hero p {
-        font-size: 15px;
-    }
-
-
-    /* Section headings */
-
-    section h2 {
-        font-size: 28px;
-    }
-
-
-    /* Cards */
-
-    .card {
-        padding: 15px;
-    }
-
-
-    /* Contact */
-
-    .contact {
-        padding: 50px 4%;
-    }
-
-    .contact h2 {
-        font-size: 28px;
+        gap: 20px;
     }
 
     .contact-info,
     .contact-form {
         padding: 22px;
-        border-radius: 12px;
     }
 
     .contact-info h3,
@@ -746,15 +685,4 @@ html{
         font-size: 15px;
     }
 
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-        padding: 13px;
-        font-size: 16px;
-    }
-
-    .contact-form button {
-        padding: 13px;
-        font-size: 16px;
-    }
 }
